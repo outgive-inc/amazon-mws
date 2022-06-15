@@ -1102,7 +1102,7 @@ class MWSClient{
                 $csv->setDelimiter("\t");
                 $headers = $csv->fetchOne();
                 $result = [];
-                foreach ($csv->setOffset(1)->fetchAll() as $row) {
+                foreach ($csv->getRecords() as $row) {
                     $result[] = array_combine($headers, $row);
                 }
             }
